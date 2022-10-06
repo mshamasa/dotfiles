@@ -35,5 +35,8 @@ mkdir $HOME/Work
 # Clone Github repositories
 $DOTFILES/clone.sh
 
+# copy neovim config
+cp -rf $DOTFILES/nvim $HOME/.config/
+
 # Set macOS preferences - we will run this last because this will reload the shell
 source $DOTFILES/.macos
