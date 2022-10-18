@@ -19,24 +19,28 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
+
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/aliases.zsh $HOME/aliases.zsh
+ln -s $HOME/dotfiles/path.zsh $HOME/path.zsh
+
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file $DOTFILES/Brewfile
+brew bundle --file $HOME/dotfiles/Brewfile
 
 # Create a Sites directory
 mkdir $HOME/Personal
 mkdir $HOME/Work
 
 # Clone Github repositories
-$DOTFILES/clone.sh
+$HOME/dotfiles/clone.sh
 
 # copy neovim config
-cp -rf $DOTFILES/nvim $HOME/.config/
+cp -rf $HOME/dotfiles/nvim $HOME/.config/nvim
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source $DOTFILES/.macos
+source $HOME/dotfiles/.macos
