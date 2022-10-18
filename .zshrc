@@ -17,9 +17,9 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/antigen.zsh
 
 # source aliases
-source aliases.zsh
+source $HOME/aliases.zsh
 # source custom paths
-source path.zsh
+source $HOME/path.zsh
 
 # User configuration
 # Antigen Bundle Manager
