@@ -6,6 +6,7 @@ lua require('comp_settings')
 lua require('telescope_settings')
 " lualine and trouble setup
 lua require('other_settings')
+lua require('lsp_settings')
 
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeShowHidden = 1
@@ -20,8 +21,8 @@ let g:ack_use_cword_for_empty_search = 1
 " let g:sonokai_transparent_background = 1
 
 " Load the colorscheme
-colorscheme gruvbox-material
-" colorscheme sonokai
+" colorscheme gruvbox-material
+colorscheme sonokai
 
 
 autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
