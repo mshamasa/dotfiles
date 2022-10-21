@@ -16,6 +16,9 @@ let g:NERDTreeIgnore = ['^node_modules$']
 let g:ackprg = 'rg --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 
+" use local prettier lib
+let g:neoformat_try_node_exe = 1
+
 " colorscheme config
 " let g:gruvbox_material_transparent_background = 1
 " let g:sonokai_transparent_background = 1
@@ -26,4 +29,3 @@ colorscheme sonokai
 
 
 autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
-autocmd BufWritePre *.py execute ':Neoformat black'

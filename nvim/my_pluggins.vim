@@ -8,7 +8,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 
 " black to format python code
-Plug 'psf/black', { 'branch': 'stable' }
 Plug 'sbdchd/neoformat'
 
 " Themes

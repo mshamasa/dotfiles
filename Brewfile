@@ -9,6 +9,7 @@ tap 'nicoverbruggen/homebrew-cask'
 brew 'bat'
 brew 'git'
 brew 'grep'
+brew 'ripgrep'
 brew 'tree'
 brew 'neovim'
 
