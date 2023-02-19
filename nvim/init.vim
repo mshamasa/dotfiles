@@ -24,8 +24,7 @@ let g:neoformat_try_node_exe = 1
 " let g:sonokai_transparent_background = 1
 
 " Load the colorscheme
-" colorscheme gruvbox-material
-colorscheme sonokai
+colorscheme gruvbox-material
 
 
 autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
