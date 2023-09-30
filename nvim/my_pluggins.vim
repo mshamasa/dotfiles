@@ -25,6 +25,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'pangloss/vim-javascript'
 Plug 'jparise/vim-graphql'
+Plug 'rust-lang/rust.vim'
 
 Plug 'folke/trouble.nvim'
 Plug 'mileszs/ack.vim'

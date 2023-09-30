@@ -11,6 +11,7 @@ lua require('lsp_settings')
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['^node_modules$']
+let g:rustfmt_autosave = 1
 
 " requires ripgrep to be installed
 let g:ackprg = 'rg --vimgrep --smart-case'
