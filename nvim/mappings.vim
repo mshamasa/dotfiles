@@ -10,9 +10,12 @@ noremap <silent><leader>l :wincmd l<CR>
 " move visual selection up or down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-" Indent visual selection left,right
+" indent visual selection left,right
 vnoremap L >gv
 vnoremap H <gv
+" copy/paste
+vnoremap <leader>cp "*y
+vnoremap <leader>pt "*p
 
 " Open in new tab
 noremap <silent>gf <C-W>gf
