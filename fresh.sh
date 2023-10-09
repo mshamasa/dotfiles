@@ -23,6 +23,7 @@ rm -rf $HOME/.zshrc
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/aliases.zsh $HOME/aliases.zsh
 ln -s $HOME/dotfiles/path.zsh $HOME/path.zsh
+ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
 
 
 # Update Homebrew recipes
