@@ -27,5 +27,6 @@ let g:neoformat_try_node_exe = 1
 " Load the colorscheme
 colorscheme gruvbox-material
 
-
+" format on save
+let g:rustfmt_autosave = 1
 autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
