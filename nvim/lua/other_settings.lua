@@ -2,7 +2,7 @@
 
 require('lualine').setup {
   options = {
-    theme = 'gruvbox-material',
+    theme = 'catppuccin-frappe',
   }
 }
 
