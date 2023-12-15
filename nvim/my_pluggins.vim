@@ -12,6 +12,7 @@ Plug 'sbdchd/neoformat'
 
 " Themes
 Plug 'sainnhe/gruvbox-material'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " telescope
 Plug 'nvim-lua/popup.nvim'

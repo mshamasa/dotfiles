@@ -25,7 +25,8 @@ let g:neoformat_try_node_exe = 1
 " let g:sonokai_transparent_background = 1
 
 " Load the colorscheme
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
+colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 " format on save
 let g:rustfmt_autosave = 1
