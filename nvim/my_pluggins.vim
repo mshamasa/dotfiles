@@ -3,9 +3,10 @@ call plug#begin()
 " file nav
 Plug 'preservim/nerdtree'
 
-" git
+" git and tpope
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-unimpaired'
 
 " black to format python code
 Plug 'sbdchd/neoformat'

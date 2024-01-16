@@ -30,4 +30,8 @@ colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-
 
 " format on save
 let g:rustfmt_autosave = 1
-autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
+augroup fmt
+  autocmd!
+  " autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
+  autocmd BufWritePre *.{js,ts,tsx,json,css,scss} undojoin | Neoformat
+augroup END
