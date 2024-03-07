@@ -32,3 +32,11 @@ nnoremap <leader>gb <cmd>lua require('telescope.builtin').git_branches(require('
 
 " diagnostic window to display
 nnoremap <leader>e :lua vim.diagnostic.open_float(0, {scope="line"})<cr>
+
+" Trouble
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
