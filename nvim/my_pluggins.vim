@@ -10,6 +10,7 @@ Plug 'tpope/vim-unimpaired'
 
 " black to format python code
 Plug 'sbdchd/neoformat'
+Plug 'stevearc/conform.nvim'
 
 " Themes
 Plug 'sainnhe/gruvbox-material'

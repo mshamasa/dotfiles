@@ -7,11 +7,11 @@ lua require('telescope_settings')
 " lualine and trouble setup
 lua require('other_settings')
 lua require('lsp_settings')
+lua require('formatter')
 
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['^node_modules$']
-let g:rustfmt_autosave = 1
 
 " requires ripgrep to be installed
 let g:ackprg = 'rg --vimgrep --smart-case'
@@ -26,12 +26,6 @@ let g:neoformat_try_node_exe = 1
 
 " Load the colorscheme
 " colorscheme gruvbox-material
-colorscheme catppuccin-frappe " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+" catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+colorscheme catppuccin-frappe
 
-" format on save
-let g:rustfmt_autosave = 1
-augroup fmt
-  autocmd!
-  " autocmd BufWritePre *.{js,ts,tsx,json,css,scss} execute ':Neoformat prettier'
-  autocmd BufWritePre *.{js,ts,tsx,json,css,scss} undojoin | Neoformat
-augroup END
