@@ -28,14 +28,20 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
+-- local lsp_flags = {
+--   -- This is the default in Nvim 0.7+
+--   debounce_text_changes = 150,
+-- }
 
-require('lspconfig')['tsserver'].setup{
+require('lspconfig')['ts_ls'].setup{
   capabilities = capabilities,
   on_attach = on_attach,
-  flags = lsp_flags,
+  -- flags = lsp_flags,
 }
+
+require('lspconfig')['rust_analyzer'].setup({
+  on_attach = function(client, bfnr)
+    vim.lsp.inlay_hint.enable(true, {bufnr =  bufnr })
+  end
+})
 

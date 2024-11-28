@@ -40,6 +40,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'mfussenegger/nvim-jdtls'
 
 " For luasnip users.
 Plug 'L3MON4D3/LuaSnip'

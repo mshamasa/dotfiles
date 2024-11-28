@@ -16,15 +16,12 @@ if test ! $(which brew); then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# create files and links
+source files.sh
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-
-ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/dotfiles/aliases.zsh $HOME/aliases.zsh
-ln -s $HOME/dotfiles/path.zsh $HOME/path.zsh
-ln -s $HOME/dotfiles/nvim $HOME/.config/nvim
-
+# install vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Update Homebrew recipes
 brew update
@@ -33,15 +30,9 @@ brew update
 brew tap homebrew/bundle
 brew bundle --file $HOME/dotfiles/Brewfile
 
-# Create a Sites directory
-mkdir $HOME/Personal
-mkdir $HOME/Work
-
-# Clone Github repositories
-$HOME/dotfiles/clone.sh
-
-# copy neovim config
-cp -rf $HOME/dotfiles/nvim $HOME/.config/nvim
-
 # Set macOS preferences - we will run this last because this will reload the shell
-source $HOME/dotfiles/.macos
+source .macos
+
+# setup lsp
+npm install -g typescript typescript-language-server
+

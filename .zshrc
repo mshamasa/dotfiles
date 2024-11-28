@@ -20,6 +20,8 @@ source $HOME/antigen.zsh
 source $HOME/aliases.zsh
 # source custom paths
 source $HOME/path.zsh
+# work specific variables
+source ${HOME}/work.zsh
 
 # User configuration
 # Antigen Bundle Manager

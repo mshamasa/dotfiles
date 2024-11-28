@@ -704,12 +704,11 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 ###############################################################################
 
 for app in "Activity Monitor" \
-    "Google Chrome Canary" \
     "Google Chrome" \
     "SystemUIServer" \
     "Terminal" \
     "iCal"; do
     killall "${app}" &> /dev/null
 done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
 
+echo "Done. Note that some of these changes require a logout/restart to take effect."
