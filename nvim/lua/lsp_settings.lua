@@ -2,6 +2,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities();
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local lspconfig = require('lspconfig')
+local util = require('lspconfig.util')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -28,20 +29,29 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
--- local lsp_flags = {
---   -- This is the default in Nvim 0.7+
---   debounce_text_changes = 150,
--- }
-
-require('lspconfig')['ts_ls'].setup{
+lspconfig['ts_ls'].setup{
   capabilities = capabilities,
   on_attach = on_attach,
   -- flags = lsp_flags,
 }
 
-require('lspconfig')['rust_analyzer'].setup({
+lspconfig['rust_analyzer'].setup({
   on_attach = function(client, bfnr)
     vim.lsp.inlay_hint.enable(true, {bufnr =  bufnr })
   end
+})
+
+
+lspconfig.biome.setup({
+  root_dir = util.root_pattern("biome.json", "package.json", ".git"),
+  on_attach = function(client, bufnr)
+    -- Autoformat on save
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format({ async = false })
+      end
+    })
+  end,
 })
 
