@@ -11,6 +11,7 @@ require("conform").setup({
     rust = { "rustfmt", lsp_format = "fallback" },
     -- Conform will run the first available formatter
     javascript = { "prettier", stop_after_first = true },
+    json = { "prettier", stop_after_first = true },
     typescript = { "prettier", stop_after_first = true },
     typescriptreact = { "prettier", stop_after_first = true },
   },

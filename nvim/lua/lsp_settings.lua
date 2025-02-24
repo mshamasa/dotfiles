@@ -4,6 +4,28 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 local lspconfig = require('lspconfig')
 local util = require('lspconfig.util')
 
+-- disable inline error
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+})
+
+vim.o.updatetime = 250
+-- display errors on hover
+vim.api.nvim_create_autocmd("CursorHold", {
+  pattern = "*",
+  callback = function()
+    vim.diagnostic.open_float(nil, { 
+      focusable = false, 
+      border = "rounded", 
+      source = "if_many", 
+      max_width = 120,
+    })
+  end,
+})
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -32,12 +54,11 @@ end
 lspconfig['ts_ls'].setup{
   capabilities = capabilities,
   on_attach = on_attach,
-  -- flags = lsp_flags,
 }
 
 lspconfig['rust_analyzer'].setup({
   on_attach = function(client, bfnr)
-    vim.lsp.inlay_hint.enable(true, {bufnr =  bufnr })
+    vim.lsp.inlay_hint.enable(true, { bufnr =  bufnr })
   end
 })
 

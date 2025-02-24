@@ -3,7 +3,6 @@
 echo "Creating directories and files"
 
 # Create directories
-mkdir $HOME/Personal
 mkdir $HOME/Work
 
 # work specific vars and such

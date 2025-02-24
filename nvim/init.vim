@@ -2,12 +2,12 @@ source $HOME/.config/nvim/defaults.vim
 source $HOME/.config/nvim/my_pluggins.vim
 source $HOME/.config/nvim/mappings.vim
 
-lua require('comp_settings')
-lua require('telescope_settings')
 " lualine and trouble setup
-lua require('other_settings')
-lua require('lsp_settings')
+lua require('comp_settings')
 lua require('formatter')
+lua require('lsp_settings')
+lua require('other_settings')
+lua require('telescope_settings')
 
 let g:NERDTreeGitStatusWithFlags = 1
 let g:NERDTreeShowHidden = 1
