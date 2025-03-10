@@ -51,10 +51,10 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 end
 
-lspconfig['ts_ls'].setup{
+lspconfig['ts_ls'].setup({
   capabilities = capabilities,
   on_attach = on_attach,
-}
+})
 
 lspconfig['rust_analyzer'].setup({
   on_attach = function(client, bfnr)
@@ -62,17 +62,7 @@ lspconfig['rust_analyzer'].setup({
   end
 })
 
-
 lspconfig.biome.setup({
-  root_dir = util.root_pattern("biome.json", "package.json", ".git"),
-  on_attach = function(client, bufnr)
-    -- Autoformat on save
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      callback = function()
-        vim.lsp.buf.format({ async = false })
-      end
-    })
-  end,
+  root_dir = util.root_pattern("biome.json"),
 })
 

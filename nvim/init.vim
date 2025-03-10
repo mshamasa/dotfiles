@@ -17,15 +17,8 @@ let g:NERDTreeIgnore = ['^node_modules$']
 let g:ackprg = 'rg --vimgrep --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 
-" use local prettier lib
-let g:neoformat_try_node_exe = 1
-
-" colorscheme config
-" let g:gruvbox_material_transparent_background = 1
-" let g:sonokai_transparent_background = 1
 
 " Load the colorscheme
-" colorscheme gruvbox-material
 " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 colorscheme catppuccin-frappe
 

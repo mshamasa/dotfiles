@@ -1,4 +1,12 @@
 require("conform").setup({
+  formatters = {
+    biome = {
+      require_cwd = true
+    },
+    prettier = {
+      require_cwd = true,
+    },
+  },
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
@@ -10,9 +18,9 @@ require("conform").setup({
     -- You can customize some of the format options for the filetype (:help conform.format)
     rust = { "rustfmt", lsp_format = "fallback" },
     -- Conform will run the first available formatter
-    javascript = { "prettier", stop_after_first = true },
-    json = { "prettier", stop_after_first = true },
-    typescript = { "prettier", stop_after_first = true },
-    typescriptreact = { "prettier", stop_after_first = true },
+    javascript = { "biome", "prettier", stop_after_first = true },
+    json = { "biome", "prettier", stop_after_first = true },
+    typescript = { "biome", "prettier", stop_after_first = true },
+    typescriptreact = { "biome", "prettier", stop_after_first = true },
   },
 })
